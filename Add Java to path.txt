@@ -1,0 +1,5 @@
+set PATH=%PATH%;C:\Program Files (x86)\Java\jre6\bin
+
+set PATH=%PATH%;C:\Program Files\StreamingApps\Java\jdk1.8.0_20\bin
+
+
