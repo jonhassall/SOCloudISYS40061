@@ -1,1 +1,0 @@
-set CLASSPATH=C:\Users\User\Documents\CloudC\NetbeansProjects\Prac2-RMI\build\classes
