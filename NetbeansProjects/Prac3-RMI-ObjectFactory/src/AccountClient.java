@@ -16,7 +16,8 @@ public class AccountClient {
 //            host = args[0];
 //        }
         //Work on local registry only
-        host = null;
+//        host = null;
+        host = "127.0.0.1";
         
         String name;
         

@@ -1,18 +1,21 @@
+import java.io.Serializable;
 import java.rmi.RemoteException;
 
 /**
  * AccountImpl: Implementation of the Account remote interface.
  */
 
-public class AccountImpl implements Account {
+public class AccountImpl implements Account, Serializable {
   // Our current balance
-  private float accBalance = 0;
+  private float accBalance;
   // Name on account
-  private String accName = "";
+  private String accName;
+  
   // Create a new account with the given name
   public AccountImpl(String name, float balance) throws RemoteException {
     accName = name;
     accBalance = balance;
+    System.out.println("AccountImpl constructor");
   }
   
   public String getName() throws RemoteException {
@@ -40,7 +43,10 @@ public class AccountImpl implements Account {
   
   // Deposit some funds
   public void deposit(float amt) throws RemoteException {
-    accBalance += amt;
+    System.out.println("    Current balance: " + getBalance());
+
+    accBalance = accBalance + amt;
+    
     // Log transaction...
     System.out.println("--> Deposited " + amt +
                        " into account " + getName());
