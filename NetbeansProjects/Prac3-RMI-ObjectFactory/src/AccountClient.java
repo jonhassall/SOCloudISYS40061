@@ -21,7 +21,7 @@ public class AccountClient {
         
         String name;
         
-        if (args.length < 1) {
+        if (args.length > 0) {
             name = args[0];
         }
         else
@@ -29,6 +29,7 @@ public class AccountClient {
             name = "Default name";
         }
         
+        System.out.println("Account name: " + name);
         try {
             // Lookup account object
             Registry registry = LocateRegistry.getRegistry(host);
@@ -44,8 +45,9 @@ public class AccountClient {
             
             Account myAcct = acctMgr.open(name);
             
-            myAcct.deposit(123);
-            System.out.println("Deposited 12,000 into account owned by "
+            System.out.println("Current balance for " + myAcct.getName() + ": " + myAcct.getBalance());
+            myAcct.deposit(250);
+            System.out.println("Deposited 250 into account owned by "
                     + myAcct.getName());
             System.out.println("Balance now totals: " + myAcct.getBalance());
             
@@ -64,6 +66,9 @@ public class AccountClient {
             //Calculate interest on current balance
             float interestCalculation = myAcct.calculateInterest(5);
             System.out.println("Interest calculated on current balance is: " + interestCalculation);
+            
+            System.out.println("Depositing interest into account");
+            myAcct.deposit(interestCalculation);
             
         } catch (RemoteException re) {
             System.err.println("Remote exception while looking up account: "

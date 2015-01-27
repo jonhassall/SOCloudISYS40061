@@ -1,17 +1,17 @@
 
 import java.rmi.RemoteException;
 import java.util.Dictionary;
+import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Map;
 import java.util.Random;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class AccountManagerImpl implements AccountManager {
     @Override
     public synchronized Account open(String name)
     {
-        //TODO: Problem with hashtable casting
-        //Exception in thread "main" java.lang.ClassCastException: java.util.Hashtable can
-        //not be cast to Account
+        System.out.println("Account name: " + name);
         Account account = (Account) accountsMap.get(name);
         
         if (account == null)
@@ -54,9 +54,12 @@ public class AccountManagerImpl implements AccountManager {
     //Hashtable is synchronized (multi-threading), hashmap is not
     //The Dictionary class is the abstract parent of any class, such as Hashtable, which maps keys to values. 
 //    private Dictionary _accounts = new Hashtable( Map<String, Account> );
-//    private Dictionary _accounts = new Map<String, Account> Hashtable();
-//      private Dictionary _accounts = new Hashtable();
-      private final Map accountsMap = new Hashtable();
+//    private Dictionary accountsMap = new Map<String, Account> Hashtable();
+      private Dictionary accountsMap = new Hashtable();
+//      private HashMap accountsMap = new HashMap<String, Account>;
+//      private final Map accountsMap = new Hashtable();
+//      private ConcurrentHashMap accountsMap = new ConcurrentHashMap();
+//    private Dictionary accountsMap = new Hashtable();
 
-    private final Random random = new Random();
+    private Random random = new Random();
 }
