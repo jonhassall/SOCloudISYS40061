@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<book xmlns="http://xml.netbeans.org/schema/books" ISBN="123456789">
+    <Title>How to Throw Snowballs</Title>
+    <Author>Jonathan Hassall</Author>
+    <Description>A brief guide to throwing snowballs</Description>
+    <Price>1.99</Price>
+    <PublicationYear>2015</PublicationYear>
+</book>
