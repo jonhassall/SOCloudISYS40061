@@ -19,3 +19,5 @@ hs_err_pid*
 /NetbeansProjects/Prac3-RMI-ObjectFactory/dist/
 /NetbeansProjects/Prac3-RMI-ObjectFactory/build/
 /NetbeansProjects/nbproject/private/
+/NetbeansProjects/build/
+/NetbeansProjects/dist/

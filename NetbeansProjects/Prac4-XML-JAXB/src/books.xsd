@@ -12,6 +12,7 @@
                 <xsd:element name="Publisher" type="xsd:string"/>
                 <xsd:element name="Description" type="xsd:string"/>
                 <xsd:element name="Price" type="xsd:float"/>
+                <xsd:element name="PublicationYear" type="xsd:gYear"/>
             </xsd:sequence>
             <xsd:attribute name="ISBN" type="xsd:int"/>
         </xsd:complexType>
