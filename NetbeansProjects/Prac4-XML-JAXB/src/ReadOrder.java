@@ -1,4 +1,5 @@
 
+import itemOrder.Book;
 import java.io.*;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -21,40 +22,21 @@ public class ReadOrder {
     public static void main(String[] args) {
         itemOrder.Book quickXML = new itemOrder.Book();
 
-        //Open file
-//        Path currentRelativePath = Paths.get("");
-//        String filename = currentRelativePath.toAbsolutePath().toString() + File.separator + "temp" + File.separator + "output.xml";
-//        System.out.println(filename);
-//        File file = new File(filename);
-//        InputStream fis = null;
-//
-//        try {
-//                fis = new FileInputStream(file);
-//        } catch (IOException e) {
-//                //e.printStackTrace();
-//        } finally {
-//        }
-//        Path currentRelativePath = Paths.get("");
-//        String filename = currentRelativePath.toAbsolutePath().toString() + File.separator + "temp" + File.separator + "output.xml";
-//        System.out.println(filename);
+        //Open file / unmarshall XML into object
         try {
             Path currentRelativePath = Paths.get("");
             String filename = currentRelativePath.toAbsolutePath().toString() + File.separator + "temp" + File.separator + "output.xml";
-            System.out.println(filename);
-
+            
             javax.xml.bind.JAXBContext jaxbCtx = javax.xml.bind.JAXBContext.newInstance(quickXML.getClass().getPackage().getName());
             javax.xml.bind.Unmarshaller unmarshaller = jaxbCtx.createUnmarshaller();
-            args = (String[]) unmarshaller.unmarshal(new java.io.File(filename)); //NOI18N
+            quickXML = (Book) unmarshaller.unmarshal(new java.io.File(filename)); //NOI18N
+            System.out.println("ISBN: " + quickXML.getISBN());
+            System.out.println("Author: " + quickXML.getAuthor());
         } catch (javax.xml.bind.JAXBException ex) {
             // XXXTODO Handle exception
             java.util.logging.Logger.getLogger("global").log(java.util.logging.Level.SEVERE, null, ex); //NOI18N
         }
 
-//        try {
-//            fis.close();
-//        } catch (IOException ex) {
-//            Logger.getLogger(WriteOrder.class.getName()).log(Level.SEVERE, null, ex);
-//        }
     }
 
     /**
