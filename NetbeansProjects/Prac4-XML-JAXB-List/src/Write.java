@@ -1,3 +1,4 @@
+import Media.ShowingToday;
 import java.io.File;
 import java.util.Iterator;
 import java.util.List;
@@ -5,10 +6,15 @@ import java.util.List;
 import Media.*;
 
 /**
- *
- * @author taha-m
+ * 
+ * Create a root class instance 'todaysShow' of ShowingToday type as per XML Schema
+ * Create a list of MovieTypes under the ShowingToday type root node
+ * Create four MovieTypes/films
+ * Marshal (output) to an XML file
+ * Iterate through elements and display if year is greater than 1990
+ * 
  */
-public class Main {
+public class Write {
 
     /**
      * @param args the command line arguments
@@ -17,7 +23,7 @@ public class Main {
         // Create root XML node 'todaysShow' and get its main element 'movies_today'
         ShowingToday todaysShow = new ShowingToday();
         List<MovieType> movies_today =  todaysShow.getMovieCollection();
-        // Create Movie instanses and add them to the 'movies_today' collection
+        // Create Movie instances and add them to the 'movies_today' collection
         MovieType film;
 
         film = new MovieType();
@@ -65,7 +71,6 @@ public class Main {
                 }
             }
         } catch (javax.xml.bind.JAXBException ex) {
-            // XXXTODO Handle exception
             java.util.logging.Logger.getLogger("global").log(java.util.logging.Level.SEVERE, null, ex); //NOI18N
         }
         
