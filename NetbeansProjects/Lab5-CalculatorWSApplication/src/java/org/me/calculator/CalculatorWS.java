@@ -14,10 +14,14 @@ import javax.ejb.Stateless;
 public class CalculatorWS {
 
     /**
-     * This is a sample web service operation
+     * Web service operation
+     * @param i First integer
+     * @param j Second integer
+     * @return integer
      */
-    @WebMethod(operationName = "hello")
-    public String hello(@WebParam(name = "name") String txt) {
-        return "Hello " + txt + " !";
+    @WebMethod(operationName = "add")
+    public int add(@WebParam(name = "i") int i, @WebParam(name = "j") int j) {
+        int k = i + j;
+        return k;
     }
 }
