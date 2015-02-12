@@ -31,3 +31,6 @@ hs_err_pid*
 /NetbeansProjects/Lab5-CalculatorWSApplication/build/
 /NetbeansProjects/Lab5-CalculatorWS_Client_Application/nbproject/private/
 /NetbeansProjects/Lab5-CalculatorWS_Client_Application/build/
+/NetbeansProjects/Lab5-CalculatorWS_ServletClient/nbproject/private/
+/NetbeansProjects/Lab5-CalculatorWS_ServletClient/build/
+/NetbeansProjects/Lab5-CalculatorWS_ServletClient/dist/
